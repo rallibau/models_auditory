@@ -19,7 +19,7 @@ Esta es una primera aproximación de la solución. En caso de llevar esta soluci
 2. Paginación de las vistas. Se deja de lado por falta de tiempo.
 3. Se toman atajos en el TDD para llegar a los objetivos propuestos.
 4. Las actualizaciones no están sobreescritas en los endpoints. Pero se puede ejecutar los casos de uso desde la shell
-5. LOs deletes tampoco. Se pueden ejecutar de forma análoga
+5. LOs deletes tampoco. Se pueden implementar de forma análoga
 
 # Iniciar el entorno
 ### Constuir
