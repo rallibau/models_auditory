@@ -24,6 +24,8 @@ Esta es una primera aproximación de la solución. En caso de llevar esta soluci
 make build
 ### INICIAR
 make env-start
+### LANZAR TEST
+make test
 
 
 # Crear usuario administrador
