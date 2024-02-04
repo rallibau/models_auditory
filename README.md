@@ -18,6 +18,8 @@ Esta es una primera aproximación de la solución. En caso de llevar esta soluci
 1. Falta la inyección de dependencias. Como es un ejemplo y su implementación es trivial, dejo de lado la implementación de la inyección de dependencias.
 2. Paginación de las vistas. Se deja de lado por falta de tiempo.
 3. Se toman atajos en el TDD para llegar a los objetivos propuestos.
+4. Las actualizaciones no están sobreescritas en los endpoints. Pero se puede ejecutar los casos de uso desde la shell
+5. LOs deletes tampoco. Se pueden ejecutar de forma análoga
 
 # Iniciar el entorno
 ### Constuir
