@@ -47,3 +47,6 @@ bash: ## Open a bash shell in project's main container
 
 shell: ## Open a Django shell in project's main container
 	$(DOCKER_COMMAND) exec api python manage.py shell
+
+test: ## Run test suite in project's main container
+	$(DOCKER_COMMAND) exec -T api pytest
