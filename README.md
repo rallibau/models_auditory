@@ -10,7 +10,7 @@ En este ejemplo, la ejecución de cualquiera de los casos de uso que desembocan 
 
 # EVOLUCIÓN FUTURA
 Esta es una primera aproximación de la solución. En caso de llevar esta solución a producción en un entorno altamente demandante:
-1. Lo primero sería el despliegue de un broker delegado de mensajería(rabbit,kafka...), y cambiar el bush en memoria por un bush que dialogue con este broker.
+1. Lo primero sería el despliegue de un broker delegado de mensajería(rabbit,kafka...), y cambiar el bus en memoria por un bus que dialogue con este broker.
 2. Elevar la gestión de auditoría a un servicio independiente, este servicio consume los eventos del módulo principal.
 3. Persistir los datos de auditoría mediante una infra optimizada para ello. Dado que no son datos no relacionales podemos optar por mongo , elasticsearch, etc.
 
