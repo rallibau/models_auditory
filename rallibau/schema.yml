@@ -1,0 +1,797 @@
+openapi: 3.0.3
+info:
+  title: Models auditory
+  version: 1.0.0
+  description: cosas
+paths:
+  /auditory/:
+    get:
+      operationId: auditory_list
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - auditory
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedAuditoryList'
+          description: ''
+    post:
+      operationId: auditory_create
+      description: API endpoint that allows users to be viewed or edited.
+      tags:
+      - auditory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Auditory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Auditory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Auditory'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Auditory'
+          description: ''
+  /auditory/{id}/:
+    get:
+      operationId: auditory_retrieve
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this auditory model.
+        required: true
+      tags:
+      - auditory
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Auditory'
+          description: ''
+    put:
+      operationId: auditory_update
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this auditory model.
+        required: true
+      tags:
+      - auditory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Auditory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Auditory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Auditory'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Auditory'
+          description: ''
+    patch:
+      operationId: auditory_partial_update
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this auditory model.
+        required: true
+      tags:
+      - auditory
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedAuditory'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedAuditory'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedAuditory'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Auditory'
+          description: ''
+    delete:
+      operationId: auditory_destroy
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this auditory model.
+        required: true
+      tags:
+      - auditory
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /health/:
+    get:
+      operationId: health_retrieve
+      tags:
+      - health
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      - {}
+      responses:
+        '200':
+          description: No response body
+  /one/:
+    get:
+      operationId: one_list
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - one
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedOneList'
+          description: ''
+    post:
+      operationId: one_create
+      description: API endpoint that allows users to be viewed or edited.
+      tags:
+      - one
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/One'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/One'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/One'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/One'
+          description: ''
+  /one/{id}/:
+    get:
+      operationId: one_retrieve
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this model one.
+        required: true
+      tags:
+      - one
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/One'
+          description: ''
+    put:
+      operationId: one_update
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this model one.
+        required: true
+      tags:
+      - one
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/One'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/One'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/One'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/One'
+          description: ''
+    patch:
+      operationId: one_partial_update
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this model one.
+        required: true
+      tags:
+      - one
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedOne'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedOne'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedOne'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/One'
+          description: ''
+    delete:
+      operationId: one_destroy
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this model one.
+        required: true
+      tags:
+      - one
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+  /two/:
+    get:
+      operationId: two_list
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - name: page
+        required: false
+        in: query
+        description: A page number within the paginated result set.
+        schema:
+          type: integer
+      tags:
+      - two
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PaginatedTwoList'
+          description: ''
+    post:
+      operationId: two_create
+      description: API endpoint that allows users to be viewed or edited.
+      tags:
+      - two
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Two'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Two'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Two'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '201':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Two'
+          description: ''
+  /two/{id}/:
+    get:
+      operationId: two_retrieve
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this model two.
+        required: true
+      tags:
+      - two
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Two'
+          description: ''
+    put:
+      operationId: two_update
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this model two.
+        required: true
+      tags:
+      - two
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/Two'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/Two'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/Two'
+        required: true
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Two'
+          description: ''
+    patch:
+      operationId: two_partial_update
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this model two.
+        required: true
+      tags:
+      - two
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/PatchedTwo'
+          application/x-www-form-urlencoded:
+            schema:
+              $ref: '#/components/schemas/PatchedTwo'
+          multipart/form-data:
+            schema:
+              $ref: '#/components/schemas/PatchedTwo'
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '200':
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/Two'
+          description: ''
+    delete:
+      operationId: two_destroy
+      description: API endpoint that allows users to be viewed or edited.
+      parameters:
+      - in: path
+        name: id
+        schema:
+          type: integer
+        description: A unique integer value identifying this model two.
+        required: true
+      tags:
+      - two
+      security:
+      - cookieAuth: []
+      - basicAuth: []
+      responses:
+        '204':
+          description: No response body
+components:
+  schemas:
+    Auditory:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        user:
+          type: string
+        model:
+          type: string
+        model_instance_id:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          format: int64
+        data_before_change: {}
+        data_after_change: {}
+      required:
+      - data_after_change
+      - data_before_change
+      - date
+      - model
+      - model_instance_id
+      - user
+    One:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        field_1:
+          type: string
+          format: date
+        field_2:
+          type: string
+          format: date
+          nullable: true
+        field_3:
+          type: string
+        field_4:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,2}(?:\.\d{0,2})?$
+        field_5:
+          type: boolean
+        field_6:
+          type: boolean
+        field_7:
+          type: boolean
+        field_8:
+          type: boolean
+        field_9:
+          type: boolean
+        field_10:
+          type: boolean
+        field_11:
+          type: boolean
+        field_12:
+          type: boolean
+        field_13:
+          type: boolean
+        field_14:
+          type: boolean
+        field_15:
+          type: boolean
+      required:
+      - field_1
+      - field_10
+      - field_11
+      - field_12
+      - field_13
+      - field_14
+      - field_15
+      - field_3
+      - field_5
+      - field_6
+      - field_7
+      - field_8
+      - field_9
+      - id
+    PaginatedAuditoryList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Auditory'
+    PaginatedOneList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/One'
+    PaginatedTwoList:
+      type: object
+      properties:
+        count:
+          type: integer
+          example: 123
+        next:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=4
+        previous:
+          type: string
+          nullable: true
+          format: uri
+          example: http://api.example.org/accounts/?page=2
+        results:
+          type: array
+          items:
+            $ref: '#/components/schemas/Two'
+    PatchedAuditory:
+      type: object
+      properties:
+        date:
+          type: string
+          format: date
+        user:
+          type: string
+        model:
+          type: string
+        model_instance_id:
+          type: integer
+          maximum: 9223372036854775807
+          minimum: -9223372036854775808
+          format: int64
+        data_before_change: {}
+        data_after_change: {}
+    PatchedOne:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        field_1:
+          type: string
+          format: date
+        field_2:
+          type: string
+          format: date
+          nullable: true
+        field_3:
+          type: string
+        field_4:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,2}(?:\.\d{0,2})?$
+        field_5:
+          type: boolean
+        field_6:
+          type: boolean
+        field_7:
+          type: boolean
+        field_8:
+          type: boolean
+        field_9:
+          type: boolean
+        field_10:
+          type: boolean
+        field_11:
+          type: boolean
+        field_12:
+          type: boolean
+        field_13:
+          type: boolean
+        field_14:
+          type: boolean
+        field_15:
+          type: boolean
+    PatchedTwo:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        field_1:
+          type: string
+          format: date
+        field_2:
+          type: string
+          format: date
+          nullable: true
+        field_3:
+          type: string
+        field_4:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,2}(?:\.\d{0,2})?$
+        field_5:
+          type: boolean
+        field_6:
+          type: boolean
+        field_7:
+          type: boolean
+        field_8:
+          type: boolean
+        field_9:
+          type: boolean
+        field_10:
+          type: boolean
+        field_11:
+          type: boolean
+        field_12:
+          type: boolean
+        field_13:
+          type: boolean
+        field_14:
+          type: boolean
+        field_15:
+          type: boolean
+    Two:
+      type: object
+      properties:
+        id:
+          type: integer
+          readOnly: true
+        field_1:
+          type: string
+          format: date
+        field_2:
+          type: string
+          format: date
+          nullable: true
+        field_3:
+          type: string
+        field_4:
+          type: string
+          format: decimal
+          pattern: ^-?\d{0,2}(?:\.\d{0,2})?$
+        field_5:
+          type: boolean
+        field_6:
+          type: boolean
+        field_7:
+          type: boolean
+        field_8:
+          type: boolean
+        field_9:
+          type: boolean
+        field_10:
+          type: boolean
+        field_11:
+          type: boolean
+        field_12:
+          type: boolean
+        field_13:
+          type: boolean
+        field_14:
+          type: boolean
+        field_15:
+          type: boolean
+      required:
+      - field_1
+      - field_10
+      - field_11
+      - field_12
+      - field_13
+      - field_14
+      - field_15
+      - field_3
+      - field_5
+      - field_6
+      - field_7
+      - field_8
+      - field_9
+      - id
+  securitySchemes:
+    basicAuth:
+      type: http
+      scheme: basic
+    cookieAuth:
+      type: apiKey
+      in: cookie
+      name: sessionid

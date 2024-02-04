@@ -1,0 +1,5 @@
+env/
+.idea/
+.DS_Store
+.pytest_cache
+rallibau/db.sqlite3
