@@ -13,9 +13,16 @@ from naturitas.domain.one import One
 from naturitas.domain.two import Two
 from naturitas.infrastructure.django_one_repository import DjangoOneRepository
 from naturitas.infrastructure.django_two_repository import DjangoTwoRepository
-from naturitas.infrastructure.in_memory_internal_event_publisher import InMemoryInternalEventPublisher
-from naturitas.infrastructure.serializers import AuditorySerializer, GroupSerializer, OneSerializer, TwoSerializer, \
-    UserSerializer
+from naturitas.infrastructure.in_memory_internal_event_publisher import (
+    InMemoryInternalEventPublisher,
+)
+from naturitas.infrastructure.serializers import (
+    AuditorySerializer,
+    GroupSerializer,
+    OneSerializer,
+    TwoSerializer,
+    UserSerializer,
+)
 from naturitas.models import AuditoryModel, ModelOne, ModelTwo
 
 
@@ -23,7 +30,8 @@ class UserViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
-    queryset = User.objects.all().order_by('-date_joined')
+
+    queryset = User.objects.all().order_by("-date_joined")
     serializer_class = UserSerializer
     permission_classes = [permissions.IsAuthenticated]
 
@@ -32,6 +40,7 @@ class GroupViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows groups to be viewed or edited.
     """
+
     queryset = Group.objects.all()
     serializer_class = GroupSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -48,6 +57,7 @@ class OneViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
+
     queryset = ModelOne.objects.all()
     serializer_class = OneSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -71,10 +81,9 @@ class OneViewSet(viewsets.ModelViewSet):
             field_15=_get_boolean_request_param(request, "field_15"),
         )
         SaveOne(
-            one_repo=DjangoOneRepository(), internal_event_publisher=InMemoryInternalEventPublisher()).execute(
-            one=one_instance,
-            user=request.user
-        )
+            one_repo=DjangoOneRepository(),
+            internal_event_publisher=InMemoryInternalEventPublisher(),
+        ).execute(one=one_instance, user=request.user)
         return super().list(request, *args, **kwargs)
 
 
@@ -89,6 +98,7 @@ class TwoViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
+
     queryset = ModelTwo.objects.all()
     serializer_class = TwoSerializer
     permission_classes = [permissions.IsAuthenticated]
@@ -112,10 +122,9 @@ class TwoViewSet(viewsets.ModelViewSet):
             field_15=_get_boolean_request_param(request, "field_15"),
         )
         SaveTwo(
-            two_repo=DjangoTwoRepository(), internal_event_publisher=InMemoryInternalEventPublisher()).execute(
-            two=two_instance,
-            user=request.user
-        )
+            two_repo=DjangoTwoRepository(),
+            internal_event_publisher=InMemoryInternalEventPublisher(),
+        ).execute(two=two_instance, user=request.user)
         return super().list(request, *args, **kwargs)
 
 
@@ -123,6 +132,7 @@ class AuditoryViewSet(viewsets.ModelViewSet):
     """
     API endpoint that allows users to be viewed or edited.
     """
+
     queryset = AuditoryModel.objects.all()
     serializer_class = AuditorySerializer
     permission_classes = [permissions.IsAuthenticated]

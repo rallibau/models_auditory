@@ -53,4 +53,3 @@ class AuditoryModel(models.Model):
 
     class Meta:
         db_table = "auditory_model"
-

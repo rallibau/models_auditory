@@ -14,6 +14,8 @@ class InMemoryAuditoryRepository(AuditoryRepository):
 class TestRegisterAuditory:
     def test_register_auditory_should_save_auditory_instance(self):
         auditory_instance = AuditoryFactory.build()
-        result = RegisterAuditory(auditory_repo=InMemoryAuditoryRepository()).execute(auditory_instance)
+        result = RegisterAuditory(auditory_repo=InMemoryAuditoryRepository()).execute(
+            auditory_instance
+        )
 
         assert result == RANDOM_NEW_INSTANCE_ID

@@ -2,5 +2,5 @@ from django.apps import AppConfig
 
 
 class NaturitasConfig(AppConfig):
-    default_auto_field = 'django.db.models.BigAutoField'
-    name = 'naturitas'
+    default_auto_field = "django.db.models.BigAutoField"
+    name = "naturitas"

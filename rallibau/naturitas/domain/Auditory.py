@@ -10,4 +10,3 @@ class Auditory:
     model_instance_id: int
     data_before_change: dict
     data_after_change: dict
-

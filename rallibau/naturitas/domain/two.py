@@ -39,4 +39,3 @@ class Two:
             "field_14": self.field_14,
             "field_15": self.field_15,
         }
-

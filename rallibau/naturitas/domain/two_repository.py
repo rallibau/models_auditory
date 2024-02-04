@@ -12,4 +12,3 @@ class TwoRepository(abc.ABC):
     @abc.abstractmethod
     def get(self, id: int) -> One:
         ...
-
