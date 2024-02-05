@@ -1,9 +1,9 @@
 from typing import Dict, List, Set, Type
 
-from naturitas.actions.subs.internal import DomainObjectUpdatedSub
 from naturitas.domain.domain_object_updated import DomainObjectUpdated
 from naturitas.domain.events import EventSubscriber, Event
 from naturitas.domain.publishers import InternalEventPublisher
+from naturitas.infrastructure.subs.internal import DomainObjectUpdatedSub
 
 
 class InMemoryInternalEventPublisher(InternalEventPublisher):

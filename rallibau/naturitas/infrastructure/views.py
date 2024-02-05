@@ -86,6 +86,30 @@ class OneViewSet(viewsets.ModelViewSet):
         ).execute(one=one_instance, user=request.user)
         return super().list(request, *args, **kwargs)
 
+    def update(self, request, *args, **kwargs):
+        one_instance = One(
+            field_1=datetime.fromisoformat(request.data["field_1"]),
+            field_2=datetime.fromisoformat(request.data["field_2"]),
+            field_3=request.data["field_3"],
+            field_4=request.data["field_4"],
+            field_5=_get_boolean_request_param(request, "field_5"),
+            field_6=_get_boolean_request_param(request, "field_6"),
+            field_7=_get_boolean_request_param(request, "field_7"),
+            field_8=_get_boolean_request_param(request, "field_8"),
+            field_9=_get_boolean_request_param(request, "field_9"),
+            field_10=_get_boolean_request_param(request, "field_10"),
+            field_11=_get_boolean_request_param(request, "field_11"),
+            field_12=_get_boolean_request_param(request, "field_12"),
+            field_13=_get_boolean_request_param(request, "field_13"),
+            field_14=_get_boolean_request_param(request, "field_14"),
+            field_15=_get_boolean_request_param(request, "field_15"),
+        )
+        SaveOne(
+            one_repo=DjangoOneRepository(),
+            internal_event_publisher=InMemoryInternalEventPublisher(),
+        ).execute(one=one_instance, user=request.user)
+        return super().list(request, *args, **kwargs)
+
 
 def _get_boolean_request_param(request, key: str):
     value = request.data.get(key, False)

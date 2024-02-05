@@ -1,7 +1,9 @@
 from datetime import datetime
 
-from naturitas.domain.domain_object_updated import DomainObjectUpdated
+
 from naturitas.domain.one import One
+
+from naturitas.domain.domain_object_updated import DomainObjectUpdated
 from naturitas.domain.one_repository import OneRepository
 from naturitas.domain.publishers import InternalEventPublisher
 
