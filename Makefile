@@ -12,17 +12,6 @@ ifeq ($(DOCKER_NAMESPACE),)
 export DOCKER_NAMESPACE := mercadona
 endif
 
-ifeq ($(DOCKER_IMAGE_NAME),)
-export DOCKER_IMAGE_NAME := acmo-api
-endif
-
-ifeq ($(DOCKER_IMAGE_TAG),)
-export DOCKER_IMAGE_TAG := latest
-endif
-
-ifeq ($(DOCKER_BRANCH_NAME),)
-export DOCKER_BRANCH_NAME := local
-endif
 
 build: ## Build project image
 	$(DOCKER_COMMAND) build --no-cache --pull
